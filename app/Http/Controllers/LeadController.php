@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lead;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class LeadController extends Controller
@@ -23,6 +23,11 @@ class LeadController extends Controller
             'phone' => 'required',
         ]);
 
+        $package = "";
+        if ($request->has('package')) {
+            $package = $request->input('package');
+        }
+
         Lead::create([
             'name' => $postData['name'],
             'email' => $postData['email'],
@@ -30,6 +35,8 @@ class LeadController extends Controller
             'phone' => $postData['phone'],
             'branch_id' => 1,
             'age' => 1,
+            'added_by' => Auth::user()->id,
+            'interested_pacakge' => $package,
         ]);
 
         return redirect()->route('dash');

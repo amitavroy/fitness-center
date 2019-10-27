@@ -8,7 +8,7 @@ Route::get('/', [WelcomeController::class, 'index']);
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dash');
-    Route::get('/leads/add', [LeadController::class, 'create'])->name('leads.add');
+    Route::get('/leads/add', [LeadController::class, 'create']);
     Route::post('/leads/save', [LeadController::class, 'store']);
 });
 

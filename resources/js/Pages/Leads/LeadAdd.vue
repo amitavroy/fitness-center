@@ -6,11 +6,11 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" placeholder="Enter the name" v-model="lead.name" id="name" tabindex="1">
+                            <input type="text" class="form-control" placeholder="Enter name" v-model="lead.name" id="name" tabindex="1">
                         </div>
                         <div class="form-group">
-                            <label for="phone_number">Phone</label>
-                            <input type="text" class="form-control" placeholder="Enter the phone number" v-model="lead.phone" id="phone_number" tabindex="3">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control" placeholder="Enter phone" v-model="lead.phone" id="phone" tabindex="3">
                         </div>
                         <div class="form-group">
                             <label for="ip">Interested package</label>
@@ -20,19 +20,18 @@
 
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" placeholder="Enter the email" v-model="lead.email" id="email" tabindex="2">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" placeholder="Enter email" v-model="lead.email" id="email" tabindex="2">
                         </div>
                         <div class="form-group">
-                            <label for="dob">Date of birth</label>
-                            <input type="date" class="form-control" placeholder="Enter the date of birth" v-model="lead.dob" id="dob" tabindex="4">
+                            <label for="dob">Birthday</label>
+                            <input type="date" class="form-control" placeholder="Enter dob" v-model="lead.dob" id="dob" tabindex="4">
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
-                    <div class="col-md-12">
-                        <button class="btn btn-success">Save</button>
-                    </div>
+                    <div class="col-md-12"><button class="btn btn-success">Save</button></div>
                 </div>
             </form>
         </div>
@@ -60,7 +59,6 @@ export default {
         async handleSubmit() {
             let response = await this.$inertia.post('/leads/save', this.lead)
         }
-
     }
 }
 </script>
