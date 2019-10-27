@@ -17,7 +17,7 @@
                             <th>Phone number</th>
                             <th>DOB</th>
                             <th>Package</th>
-                            <th>Added on</th>
+                            <th>leads/listAdded On</th>
                             <th></th>
                         </tr>
                         <tr v-for="lead in leads.data" :key="lead.id">
@@ -26,13 +26,18 @@
                             <td>{{lead.email}}</td>
                             <td>{{lead.phone}}</td>
                             <td>{{lead.dob}}</td>
-                            <td>Package</td>
-                            <td>Added on</td>
+                            <td>{{lead.interested_pacakge}}</td>
+                            <td>{{lead.created_at}}</td>
                             <td>
-                                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="arrow-icon"><polygon points="12.95 10.707 13.657 10 8 4.343 6.586 5.757 10.828 10 6.586 14.243 8 15.657 12.95 10.707"></polygon></svg></a>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="arrow-icon">
+                                        <polygon points="12.95 10.707 13.657 10 8 4.343 6.586 5.757 10.828 10 6.586 14.243 8 15.657 12.95 10.707"></polygon>
+                                    </svg>
+                                </a>
                             </td>
                         </tr>
                     </table>
+
                     <pagination :links="leads.links"></pagination>
                 </div>
             </div>
@@ -41,13 +46,13 @@
 </template>
 
 <script>
-import Layout from './../../Shared/Layout'
-import Pagination from './../../Shared/Pagination'
-export default {
-    components: {
-        Layout,
-        Pagination
-    },
-    props: ['leads']
-}
+    import Layout from './../../Shared/Layout'
+    import Pagination from './../../Shared/Pagination'
+    export default {
+        components: {
+            Layout,
+            Pagination
+        },
+        props: ['leads']
+    }
 </script>

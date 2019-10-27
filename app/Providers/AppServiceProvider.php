@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Collection;
 use Illuminate\Pagination\UrlWindow;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\LengthAwarePaginator;
 
