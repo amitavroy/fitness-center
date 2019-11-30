@@ -66,7 +66,7 @@
         },
         methods: {
             async handleSubmit() {
-
+                let response = await this.$inertia.post('/leads/update', this.lead)
             }
         }
     }
