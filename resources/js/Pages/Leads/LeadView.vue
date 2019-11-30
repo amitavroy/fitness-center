@@ -14,7 +14,7 @@
                         </div>
                         <div class="form-group">
                             <label for="ip">Interested package</label>
-                            <input type="text" class="form-control" placeholder="Enter the package interested in" v-model="lead.package" id="ip" tabindex="5">
+                            <input type="text" class="form-control" placeholder="Enter the package interested in" v-model="lead.interested_package" id="ip" tabindex="5">
                         </div>
                     </div>
 
@@ -31,7 +31,10 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-12"><button class="btn btn-success">Save</button></div>
+                    <div class="col-md-12">
+                        <button class="btn btn-success">Save</button>
+                        <inertia-link class="btn btn-warning" :href="$route('lead.list')">Back</inertia-link>
+                    </div>
                 </div>
             </form>
         </div>

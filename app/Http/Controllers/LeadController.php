@@ -36,8 +36,8 @@ class LeadController extends Controller
         ]);
 
         $package = "";
-        if ($request->has('package')) {
-            $package = $request->input('package');
+        if ($request->has('interested_package')) {
+            $package = $request->input('interested_package');
         }
 
         Lead::create([
@@ -51,7 +51,7 @@ class LeadController extends Controller
             'interested_package' => $package,
         ]);
 
-        return redirect()->route('dash');
+        return redirect()->route('lead.list');
     }
 
     public function view(Lead $lead)
