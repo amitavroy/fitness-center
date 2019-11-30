@@ -53,4 +53,11 @@ class LeadController extends Controller
 
         return redirect()->route('dash');
     }
+
+    public function view(Lead $lead)
+    {
+        return Inertia::render('Leads/LeadView', [
+            'lead-prop' => $lead
+        ]);
+    }
 }
