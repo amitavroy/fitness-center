@@ -48,7 +48,7 @@ class LeadController extends Controller
             'branch_id' => 1,
             'age' => 1,
             'added_by' => Auth::user()->id,
-            'interested_pacakge' => $package,
+            'interested_package' => $package,
         ]);
 
         return redirect()->route('dash');
