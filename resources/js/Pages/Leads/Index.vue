@@ -3,7 +3,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Leads</h1>
+                    <h1 class="float-left">Leads</h1>
+                    <inertia-link :href="$route('lead.add')" class="float-right btn btn-primary">Add Lead</inertia-link>
                 </div>
             </div>
 
