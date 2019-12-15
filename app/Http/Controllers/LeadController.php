@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lead;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
@@ -49,13 +50,16 @@ class LeadController extends Controller
             $package = $request->input('interested_package');
         }
 
+        $dob = Carbon::parse($postData['dob']);
+        $age = $dob->age;
+
         Lead::create([
             'name' => $postData['name'],
             'email' => $postData['email'],
-            'dob' => $postData['dob'],
+            'dob' => $dob,
             'phone' => $postData['phone'],
             'branch_id' => 1,
-            'age' => 1,
+            'age' => $age,
             'added_by' => Auth::user()->id,
             'interested_package' => $package,
         ]);
@@ -69,7 +73,7 @@ class LeadController extends Controller
             'lead-prop' => $lead
         ]);
     }
-    
+
     public function update(Request $request)
     {
         $rules = $this->validations;
