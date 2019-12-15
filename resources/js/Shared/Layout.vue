@@ -37,6 +37,8 @@
             </div>
         </nav>
 
+        <alert-messages></alert-messages>
+
         <main class="py-4">
             <slot />
         </main>
@@ -45,8 +47,11 @@
 
 <script>
 import axios from 'axios';
-
+import AlertMessages from './AlertMessages';
 export default {
+    components: {
+        AlertMessages
+    },
     methods: {
         async handleLogout() {
             await axios.post('/logout', {});

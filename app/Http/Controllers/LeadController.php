@@ -23,7 +23,6 @@ class LeadController extends Controller
         ];
     }
 
-
     public function index()
     {
         $leads = Lead::query()
@@ -80,11 +79,13 @@ class LeadController extends Controller
         $rules['id'] = 'required|exists:leads';
 
         $postData = $this->validate($request, $rules);
+        $postData['age'] = Carbon::parse($postData['dob'])->age;
 
         $lead = Lead::where('id', $postData['id'])
             ->update($postData);
 
         return redirect()
-            ->route('lead.view', ['lead' => $postData['id']]);
+            ->route('lead.view', ['lead' => $postData['id']])
+            ->with('success', 'Your chages are saved now.');
     }
 }

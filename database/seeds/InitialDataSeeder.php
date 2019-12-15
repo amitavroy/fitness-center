@@ -50,5 +50,16 @@ class InitialDataSeeder extends Seeder
             'branch_id' => 1,
             'added_by' => 1,
         ]);
+
+        Lead::create([
+            'name' => 'Shane Hope',
+            'email' => 'shane.hope@gmail.om',
+            'phone' => '+9187650012',
+            'interested_package' => 'Monthly plan',
+            'dob' => Carbon::parse('02/05/1982'),
+            'age' => Carbon::parse('02/05/1982')->age,
+            'branch_id' => 1,
+            'added_by' => 1,
+        ]);
     }
 }

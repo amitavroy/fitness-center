@@ -7,6 +7,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Session;
+use Inertia\Inertia;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,7 +29,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Inertia::share('flash', function() {
+            return [
+                'message' => Session::get('message'),
+                'success' => Session::get('success'),
+                'error' => Session::get('error'),
+            ];
+        });
     }
 
     private function registerLengthAwarePaginator()
