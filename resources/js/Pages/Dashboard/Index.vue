@@ -1,11 +1,13 @@
 <template>
     <layout>
         <div class="container">
+
             <div class="row">
                 <div class="col-md-12">
-                    <p>This is Dashboard, welcome {{fname}}, {{lname}}</p>
+                    <p>Welcome {{fname}}, {{lname}}</p>
                 </div>
             </div>
+
         </div>
     </layout>
 </template>

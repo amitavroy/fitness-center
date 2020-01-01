@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Lead;
+use App\Models\Reminder;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
@@ -28,7 +29,6 @@ class InitialDataSeeder extends Seeder
             'branch_id' => 1,
             'added_by' => 1,
         ]);
-
         Lead::create([
             'name' => 'Jesse Wood',
             'email' => 'jwood@worldweb.com',
@@ -39,7 +39,6 @@ class InitialDataSeeder extends Seeder
             'branch_id' => 1,
             'added_by' => 1,
         ]);
-
         Lead::create([
             'name' => 'James Smith',
             'email' => 'james.smith@outlook1.com',
@@ -50,7 +49,6 @@ class InitialDataSeeder extends Seeder
             'branch_id' => 1,
             'added_by' => 1,
         ]);
-
         Lead::create([
             'name' => 'Shane Hope',
             'email' => 'shane.hope@gmail.om',
@@ -60,6 +58,100 @@ class InitialDataSeeder extends Seeder
             'age' => Carbon::parse('02/05/1982')->age,
             'branch_id' => 1,
             'added_by' => 1,
+        ]);
+        Lead::create([
+            'name' => 'Alan Lamb',
+            'email' => 'alan.lamb@gmail.om',
+            'phone' => '+9182430012',
+            'interested_package' => 'Annual plan',
+            'dob' => Carbon::parse('02/07/1991'),
+            'age' => Carbon::parse('02/07/1991')->age,
+            'branch_id' => 1,
+            'added_by' => 1,
+        ]);
+        Lead::create([
+            'name' => 'Zuber Khan',
+            'email' => 'zuber.khan@gmail.om',
+            'phone' => '+9178630012',
+            'interested_package' => 'Annual plan',
+            'dob' => Carbon::parse('03/07/1993'),
+            'age' => Carbon::parse('03/07/1993')->age,
+            'branch_id' => 1,
+            'added_by' => 1,
+        ]);
+        Lead::create([
+            'name' => 'Amit Powar',
+            'email' => 'amitp@yahoo.om',
+            'phone' => '+9177630012',
+            'interested_package' => 'Annual plan',
+            'dob' => Carbon::parse('09/09/1983'),
+            'age' => Carbon::parse('09/09/1983')->age,
+            'branch_id' => 1,
+            'added_by' => 1,
+        ]);
+        Lead::create([
+            'name' => 'Sahil Sharma',
+            'email' => 'sahil.sharma@outlook.om',
+            'phone' => '+9177690012',
+            'interested_package' => 'Monthly plan',
+            'dob' => Carbon::parse('01/09/1984'),
+            'age' => Carbon::parse('01/09/1984')->age,
+            'branch_id' => 1,
+            'added_by' => 1,
+        ]);
+        Lead::create([
+            'name' => 'Kunal kabra',
+            'email' => 'kunal.kabra@outlook.om',
+            'phone' => '+9178670012',
+            'interested_package' => 'Monthly plan',
+            'dob' => Carbon::parse('09/09/1983'),
+            'age' => Carbon::parse('09/09/1983')->age,
+            'branch_id' => 1,
+            'added_by' => 1,
+        ]);
+        Lead::create([
+            'name' => 'Nicholas Puran',
+            'email' => 'nic.p@outlook.om',
+            'phone' => '+9170012',
+            'interested_package' => 'Monthly plan',
+            'dob' => Carbon::parse('11/11/1985'),
+            'age' => Carbon::parse('11/11/1985')->age,
+            'branch_id' => 1,
+            'added_by' => 1,
+        ]);
+        Lead::create([
+            'name' => 'Nancy Patel',
+            'email' => 'npatel@outlook.om',
+            'phone' => '+917044012',
+            'interested_package' => 'Monthly plan',
+            'dob' => Carbon::parse('12/12/1987'),
+            'age' => Carbon::parse('12/12/1987')->age,
+            'branch_id' => 1,
+            'added_by' => 1,
+        ]);
+
+        Reminder::create([
+            'lead_id' => 11,
+            'user_id' => 1,
+            'reminder' => 'Call to check on the membership',
+            'reminder_date' => Carbon::now()->subDays(3),
+            'note' => 'Customer asked to call again after 2 days.',
+            'status' => 'completed',
+        ]);
+        Reminder::create([
+            'lead_id' => 11,
+            'user_id' => 1,
+            'reminder' => 'A reminder to call the customer again.',
+            'reminder_date' => Carbon::now()->addDays(2),
+            'status' => 'pending',
+        ]);
+        Reminder::create([
+            'lead_id' => 9,
+            'user_id' => 1,
+            'reminder' => 'A reminder to call the customer again.',
+            'reminder_date' => Carbon::now()->addDays(2),
+            'note' => 'Not interested in a plan.',
+            'status' => 'completed',
         ]);
     }
 }
