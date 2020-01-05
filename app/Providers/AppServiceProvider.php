@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Pagination\UrlWindow;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -43,6 +44,15 @@ class AppServiceProvider extends ServiceProvider
                 'success' => Session::get('success'),
                 'error' => Session::get('error'),
             ];
+        });
+
+        Inertia::share('auth.user', function () {
+            if (Auth::user()) {
+                return [
+                    'id' => Auth::user()->id,
+                    'name' => Auth::user()->name,
+                ];
+            }
         });
     }
 
