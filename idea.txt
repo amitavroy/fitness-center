@@ -22,3 +22,7 @@ Subscription History
 - renewal_date
 - created_at
 - updated_at
+
+Button to convert a lead to a subscriber.
+Pop up to confirm the package that the user wants to select. Prefill the current one by default.
+Show the start date as today, and when the next renewal will be along with the amount.

@@ -29,7 +29,7 @@ class LeadController extends Controller
         $leads = Lead::query()
             ->where('branch_id', 1)
             ->orderByDesc('id')
-            ->paginate(8);
+            ->paginate(10);
 
         return Inertia::render('Leads/Index', [
             'leads' => $leads
