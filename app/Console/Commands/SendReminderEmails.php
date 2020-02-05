@@ -2,10 +2,10 @@
 
 namespace App\Console\Commands;
 
-use App\Mail\ReminderEmailDigest;
-use App\Models\Reminder;
 use App\User;
+use App\Models\Reminder;
 use Illuminate\Console\Command;
+use App\Mail\ReminderEmailDigest;
 use Illuminate\Support\Facades\Mail;
 
 class SendReminderEmails extends Command
@@ -22,7 +22,7 @@ class SendReminderEmails extends Command
      *
      * @var string
      */
-    protected $description = 'Send email notification to user about reminders.';
+    protected $description = 'Command description';
 
     /**
      * Create a new command instance.
@@ -46,10 +46,10 @@ class SendReminderEmails extends Command
             ->with(['lead'])
             ->where('reminder_date', now()->format('Y-m-d'))
             ->where('status', 'pending')
-            ->orderBy('user_id')
+            ->orderByDesc('user_id')
             ->get();
 
-        // group by user
+        // group all reminders by user
         $data = [];
         foreach ($reminders as $reminder) {
             $data[$reminder->user_id][] = $reminder->toArray();

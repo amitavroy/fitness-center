@@ -30,14 +30,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Inertia::share([
-            'errors' => function () {
-                return Session::get('errors')
-                    ? Session::get('errors')->getBag('default')->getMessages()
-                    : (object) [];
-            },
-        ]);
-
         Inertia::share('flash', function() {
             return [
                 'message' => Session::get('message'),
@@ -45,6 +37,14 @@ class AppServiceProvider extends ServiceProvider
                 'error' => Session::get('error'),
             ];
         });
+
+        Inertia::share([
+            'errors' => function () {
+                return Session::get('errors')
+                    ? Session::get('errors')->getBag('default')->getMessages()
+                    : (object) [];
+            },
+        ]);
 
         Inertia::share('auth.user', function () {
             if (Auth::user()) {

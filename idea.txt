@@ -1,0 +1,24 @@
+Package
+- id
+- name
+- amount
+- number_of_days
+- status (active/inactive)
+
+Subscriber
+- id
+- lead_id
+- package_id
+- renewal_date
+- amount_due
+- created_at
+- updated_at
+
+Subscription History
+- id
+- subscriber_id
+- package_id
+- amount
+- renewal_date
+- created_at
+- updated_at

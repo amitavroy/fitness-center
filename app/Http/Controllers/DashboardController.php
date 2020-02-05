@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $reminders = Reminder::query()
+        $reminds = Reminder::query()
             ->with(['lead'])
             ->where('reminders.reminder_date', now()->format('Y-m-d'))
             ->where('reminders.user_id', Auth::user()->id)
@@ -18,7 +18,9 @@ class DashboardController extends Controller
             ->get();
 
         $data = [
-            'reminders' => $reminders
+            'fname' => 'Amitav',
+            'lname' => 'Roy',
+            'reminders' => $reminds
         ];
 
         return Inertia::render('Dashboard/Index', $data);

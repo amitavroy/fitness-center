@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lead;
+use App\Models\Package;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,7 @@ class LeadController extends Controller
         $leads = Lead::query()
             ->where('branch_id', 1)
             ->orderByDesc('id')
-            ->paginate(10);
+            ->paginate(8);
 
         return Inertia::render('Leads/Index', [
             'leads' => $leads
@@ -37,7 +38,14 @@ class LeadController extends Controller
 
     public function create()
     {
-        return Inertia::render('Leads/LeadAdd');
+        $packages = Package::query()
+            ->where('status', 'active')
+            ->orderByDesc('id')
+            ->get();
+
+        return Inertia::render('Leads/LeadAdd', [
+            'packages' => $packages
+        ]);
     }
 
     public function store(Request $request)
@@ -70,8 +78,14 @@ class LeadController extends Controller
     {
         $lead->load(['reminders']);
 
+        $packages = Package::query()
+            ->where('status', 'active')
+            ->orderByDesc('id')
+            ->get();
+
         return Inertia::render('Leads/LeadView', [
-            'lead-prop' => $lead
+            'lead-prop' => $lead,
+            'packages' => $packages,
         ]);
     }
 

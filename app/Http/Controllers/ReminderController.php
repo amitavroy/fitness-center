@@ -12,7 +12,7 @@ class ReminderController extends Controller
     public function add(Lead $lead)
     {
         return Inertia::render('Leads/LeadReminderAdd', [
-            'lead' => $lead,
+            'lead' => $lead
         ]);
     }
 
@@ -29,7 +29,8 @@ class ReminderController extends Controller
 
         $lead = Lead::find($postData['lead_id']);
 
-        $lead->reminders()->create($postData);
+        $lead->reminders()
+            ->create($postData);
 
         return redirect()
             ->route('lead.view', [$lead]);
@@ -39,7 +40,7 @@ class ReminderController extends Controller
     {
         return Inertia::render('Leads/ReminderView', [
             'lead' => $lead,
-            'reminder' => $reminder
+            'reminder' => $reminder,
         ]);
     }
 
@@ -49,37 +50,12 @@ class ReminderController extends Controller
             'reminder_id' => 'required|exists:reminders,id',
         ]);
 
-        $reminder = Reminder::find($postData['reminder_id']);
+        $reminder = Reminder::findOrFail($postData['reminder_id']);
         $reminder->status = 'completed';
         $reminder->save();
 
         $lead = Lead::find($reminder->lead_id);
 
-        return redirect()
-            ->route('reminder.add', ['lead' => $lead]);
-    }
-
-    public function addNote(Lead $lead, Reminder $reminder)
-    {
-        return Inertia::render('Leads/ReminderNote', [
-            'lead' => $lead,
-            'reminder' => $reminder
-        ]);
-    }
-
-    public function close(Request $request)
-    {
-        $postData = $this->validate($request, [
-            'reminder_id' => 'required|exists:reminders,id',
-            'note' => 'required|min:3',
-        ]);
-
-        $reminder = Reminder::find($postData['reminder_id']);
-        $reminder->status = 'completed';
-        $reminder->save();
-
-        $lead = Lead::find($reminder->lead_id);
-
-        return redirect()->route('lead.view', ['lead' => $lead]);
+        return redirect(route('reminder.add', ['lead' => $lead]));
     }
 }
