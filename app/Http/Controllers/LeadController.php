@@ -28,6 +28,7 @@ class LeadController extends Controller
     {
         $leads = Lead::query()
             ->where('branch_id', 1)
+            ->where('active', 1)
             ->orderByDesc('id')
             ->paginate(10);
 

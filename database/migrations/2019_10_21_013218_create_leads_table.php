@@ -23,6 +23,7 @@ class CreateLeadsTable extends Migration
             $table->date('dob');
             $table->unsignedBigInteger('branch_id');
             $table->unsignedBigInteger('added_by');
+            $table->boolean('active')->default(1);
             $table->timestamps();
 
             $table->index(['phone', 'branch_id']);
