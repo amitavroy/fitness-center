@@ -49,6 +49,7 @@ class LeadSubscriberController extends Controller
             'dob' => $lead['dob'],
             'branch_id' => $lead['branch_id'],
             'added_by' => $lead['added_by'],
+            'interested_package' => $package->name
         ]);
 
         $lead->active = 0;

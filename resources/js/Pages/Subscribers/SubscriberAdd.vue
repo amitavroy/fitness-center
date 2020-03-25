@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-12">
           <h1>
-            <inertia-link :href="$route('lead.list')">Subscribers</inertia-link>
+            <inertia-link :href="$route('lead.list')">Leads</inertia-link>
             <span class="breadcrumb-sep">/</span>
             New subscriber
           </h1>

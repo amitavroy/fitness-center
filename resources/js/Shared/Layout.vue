@@ -35,6 +35,7 @@
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownLeft">
                 <inertia-link :href="$route('lead.list')" class="dropdown-item">Leads</inertia-link>
+                <inertia-link :href="$route('subscribers.list')" class="dropdown-item">Subscribers</inertia-link>
                 <inertia-link :href="$route('package.list')" class="dropdown-item">Packages</inertia-link>
               </div>
             </li>

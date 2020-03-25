@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LeadController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ReminderController;
 use App\Http\Controllers\DashboardController;
@@ -32,6 +33,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/packages/save', [PackageController::class, 'store'])->name('package.save');
     Route::get('/pacakges/view/{package}', [PackageController::class, 'view'])->name('package.view');
     Route::post('/pacakges/update', [PackageController::class, 'update'])->name('package.update');
+
+    Route::get('/subscribers/list', [SubscriberController::class, 'index'])->name('subscribers.list');
 });
 
 Auth::routes();
