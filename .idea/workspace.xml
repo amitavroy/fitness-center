@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbc2a381-8ef4-4267-b4e5-1ab473568dd0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Subscribers/Index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LeadSubscriberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LeadSubscriberController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubscriberController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubscriberController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Subscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Subscriber.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Subscribers/SubscriberAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Subscribers/SubscriberAdd.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Shared/Layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Shared/Layout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/InitialDataSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/InitialDataSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +165,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
@@ -185,7 +178,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -245,6 +238,10 @@
       <screen x="54" y="27" width="1866" height="1053" />
     </state>
     <state x="582" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/54.27.1866.1053@54.27.1866.1053" timestamp="1580914353557" />
+    <state x="328" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586090612696">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="328" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1280.777@0.23.1280.777" timestamp="1586090612696" />
     <state width="1253" height="284" key="GridCell.Tab.0.bottom" timestamp="1580914430582">
       <screen x="54" y="27" width="1866" height="1053" />
     </state>
@@ -265,14 +262,15 @@
       <screen x="54" y="27" width="1866" height="1053" />
     </state>
     <state width="263" height="500" key="HiddenNamespacesPopup/54.27.1866.1053@54.27.1866.1053" timestamp="1580914373307" />
-    <state x="476" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1580913417429">
-      <screen x="54" y="27" width="1866" height="1053" />
-    </state>
-    <state x="476" y="188" width="1022" height="737" key="SettingsEditor/54.27.1866.1053@54.27.1866.1053" timestamp="1580913417429" />
-    <state x="404" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1585117788146">
+    <state x="202" y="34" width="900" height="722" key="SettingsEditor" timestamp="1586090504982">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="404" y="284" key="com.intellij.ide.util.TipDialog/0.23.1280.777@0.23.1280.777" timestamp="1585117788146" />
+    <state x="202" y="34" width="900" height="722" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1586090504982" />
+    <state x="476" y="188" width="1022" height="737" key="SettingsEditor/54.27.1866.1053@54.27.1866.1053" timestamp="1580913417429" />
+    <state x="404" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1586090689860">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="404" y="284" key="com.intellij.ide.util.TipDialog/0.23.1280.777@0.23.1280.777" timestamp="1586090689860" />
     <state x="643" y="381" key="com.intellij.ide.util.TipDialog/54.27.1866.1053@54.27.1866.1053" timestamp="1580913268220" />
     <state x="409" y="194" width="670" height="501" key="search.everywhere.popup" timestamp="1585118415273">
       <screen x="0" y="23" width="1280" height="777" />

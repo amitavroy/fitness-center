@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Subscriber;
 use Carbon\Carbon;
 use App\Models\Lead;
 use App\Models\Package;
@@ -16,6 +17,9 @@ class InitialDataSeeder extends Seeder
     public function run()
     {
         $this->createLeadsData();
+        $this->createReminders();
+        $this->createPackages();
+        $this->createSubscribers();
     }
 
     private function createLeadsData()
@@ -106,6 +110,7 @@ class InitialDataSeeder extends Seeder
             'age' => Carbon::parse('01/09/1984')->age,
             'branch_id' => 1,
             'added_by' => 1,
+            'active' => 0,
         ]);
 
         Lead::create([
@@ -128,6 +133,7 @@ class InitialDataSeeder extends Seeder
             'age' => Carbon::parse('11/11/1985')->age,
             'branch_id' => 1,
             'added_by' => 1,
+            'active' => 0,
         ]);
 
         Lead::create([
@@ -139,8 +145,12 @@ class InitialDataSeeder extends Seeder
             'age' => Carbon::parse('12/12/1987')->age,
             'branch_id' => 1,
             'added_by' => 1,
+            'active' => 0,
         ]);
+    }
 
+    private function createReminders()
+    {
         Reminder::create([
             'lead_id' => 11,
             'user_id' => 1,
@@ -166,7 +176,10 @@ class InitialDataSeeder extends Seeder
             'note' => 'Not interested in a plan.',
             'status' => 'completed',
         ]);
+    }
 
+    private function createPackages()
+    {
         Package::create([
             'name' => 'Monthly package',
             'amount' => 1000,
@@ -186,6 +199,54 @@ class InitialDataSeeder extends Seeder
             'amount' => 10000,
             'number_of_days' => 365,
             'status' => 'active',
+        ]);
+    }
+
+    private function createSubscribers()
+    {
+        Subscriber::create([
+            'lead_id' => 8,
+            'package_id' => 3,
+            'renewal_date' => now()->addMonths(12),
+            'amount' => 10000,
+            'name' => 'Sahil Sharma',
+            'email' => 'sahil.sharma@outlook.om',
+            'phone' => '+9177690012',
+            'age' => 36,
+            'interested_package' => 'Yearly package',
+            'dob' => '1984-01-09',
+            'branch_id' => 1,
+            'added_by' => 1,
+        ]);
+
+        Subscriber::create([
+            'lead_id' => 10,
+            'package_id' => 1,
+            'renewal_date' => now()->addMonths(1),
+            'amount' => 1000,
+            'name' => 'Nicholas Puran',
+            'email' => 'nic.p@outlook.om',
+            'phone' => '+9170012',
+            'age' => 34,
+            'interested_package' => 'Monthly package',
+            'dob' => '1985-11-11',
+            'branch_id' => 1,
+            'added_by' => 1,
+        ]);
+
+        Subscriber::create([
+            'lead_id' => 11,
+            'package_id' => 2,
+            'renewal_date' => now()->addMonths(6),
+            'amount' => 5000,
+            'name' => 'Nancy Patel',
+            'email' => 'Nancy Patel',
+            'phone' => '+917044012',
+            'age' => 32,
+            'interested_package' => 'Half yearly package',
+            'dob' => '1987-12-12',
+            'branch_id' => 1,
+            'added_by' => 1,
         ]);
     }
 }
