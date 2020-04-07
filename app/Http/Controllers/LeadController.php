@@ -24,16 +24,32 @@ class LeadController extends Controller
         ];
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $package = null;
+        $search = false;
+        if ($request->has('package_search') && $request->input('package_search') != 0) {
+            $package = Package::findOrFail($request->input('package_search'));
+        }
+        if ($request->has('search') && $request->input('search') !== '') {
+            $search = true;
+        }
+
         $leads = Lead::query()
             ->where('branch_id', 1)
             ->where('active', 1)
+            ->when($search, function ($query) use ($request) {
+                $query->where('name', 'like', "%{$request->input('search')}%")
+                    ->orWhere('email', 'like', "%{$request->input('search')}%");
+            })
+            ->when($package !== null, function ($query) use ($request, $package) {
+                $query->where('interested_package', '=', $package->name);
+            })
             ->orderByDesc('id')
             ->paginate(10);
 
         return Inertia::render('Leads/Index', [
-            'leads' => $leads
+            'leads' => $leads,
         ]);
     }
 
@@ -45,7 +61,7 @@ class LeadController extends Controller
             ->get();
 
         return Inertia::render('Leads/LeadAdd', [
-            'packages' => $packages
+            'packages' => $packages,
         ]);
     }
 

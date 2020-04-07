@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bbc2a381-8ef4-4267-b4e5-1ab473568dd0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/InitialDataSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/InitialDataSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Leads/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Leads/Index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,12 +153,6 @@
       <path value="$PROJECT_DIR$/vendor/league/commonmark-ext-table" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="261" />
-    <option name="y" value="126" />
-    <option name="width" value="1230" />
-    <option name="height" value="777" />
-  </component>
   <component name="ProjectId" id="1XONcvUtm9dP18sWj2tBtw1IjQr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -272,10 +268,10 @@
     </state>
     <state x="404" y="284" key="com.intellij.ide.util.TipDialog/0.23.1280.777@0.23.1280.777" timestamp="1586090689860" />
     <state x="643" y="381" key="com.intellij.ide.util.TipDialog/54.27.1866.1053@54.27.1866.1053" timestamp="1580913268220" />
-    <state x="409" y="194" width="670" height="501" key="search.everywhere.popup" timestamp="1585118415273">
+    <state x="409" y="194" width="670" height="501" key="search.everywhere.popup" timestamp="1586095961139">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="409" y="194" width="670" height="501" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1585118415273" />
+    <state x="409" y="194" width="670" height="501" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1586095961139" />
     <state x="650" y="259" width="672" height="678" key="search.everywhere.popup/54.27.1866.1053@54.27.1866.1053" timestamp="1580914228653" />
   </component>
 </project>

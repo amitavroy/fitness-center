@@ -8,6 +8,22 @@
         </div>
       </div>
 
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <form class="form-inline" method="get" :action="$route('lead.list')">
+            <input type="text" class="form-control mr-3 col-sm-4" placeholder="Search a lead by name or phone" name="search">
+            <select name="package_search" id="search=package" class="form-control col-sm-2 mr-3">
+              <option value="0" selected>All</option>
+              <option value="3">Yearly package</option>
+              <option value="2">Half yearly package</option>
+              <option value="1">Monthly package</option>
+            </select>
+            <button class="btn btn-primary mr-3">Filter</button>
+            <a :href="$route('lead.list')">Reset</a>
+          </form>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-md-12">
           <table class="table table-bordered bg-white">
